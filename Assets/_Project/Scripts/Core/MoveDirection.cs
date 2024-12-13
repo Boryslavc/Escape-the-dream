@@ -1,19 +1,10 @@
-﻿
+﻿using UnityEngine;
+
 namespace Core
 {
-    public enum MoveDirection
+    [CreateAssetMenu(fileName = "Direction", menuName = "Systems/Core/Direction")]
+    public class MoveDirection : ScriptableObject
     {
-        StraightLeft,
-        StraightRight, 
-        StraightUp,
-        StraightDown,
-        CurveLeftUp,
-        CurveRightUp,
-        CurveLeftDown,
-        CurveRightDown,
-        CurveUpRight,
-        CurveUpLeft,
-        CurveDownLeft,
-        CurveDownRight,
+        public Vector3 Direction;
     }
 }
