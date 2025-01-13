@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-namespace ObjectPooling
+namespace Core
 {
     public abstract class PoolObject : MonoBehaviour
     {

@@ -3,12 +3,12 @@ using UnityEngine;
 using UnityEngine.Pool;
 
 
-namespace ObjectPooling
+namespace Core
 {
     public class ObjectPooler : MonoBehaviour
     {
         [SerializeField] private int maxPoolSize = 100;
-        [SerializeField] private int defaultPoolSize = 10;
+        [SerializeField] private int defaultPoolSize = 20;
 
         public static ObjectPooler Instance;
         private static Dictionary<string, IObjectPool<PoolObject>> pools

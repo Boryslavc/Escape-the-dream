@@ -1,6 +1,7 @@
-using ObjectPooling;
-
-public interface ISpellSusceptible
+namespace Core
 {
-    void React(SpellPoolSettings spellSettings);
+    public interface ISpellSusceptible
+    {
+        void React(PooledSpellSettings spellSettings);
+    }
 }

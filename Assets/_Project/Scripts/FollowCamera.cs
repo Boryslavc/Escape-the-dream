@@ -1,25 +1,28 @@
 using UnityEngine;
 
-public class FollowCamera : MonoBehaviour
+namespace Core
 {
-    [SerializeField] private Transform player;
-    [SerializeField] [Range(1,10)] private float smoothing = 8f;
-
-    private Vector3 offset = new Vector2(6, 0);
-
-    private void Update()
+    public class FollowCamera : MonoBehaviour
     {
-        var targetPos = player.position + offset;
+        [SerializeField] private Transform player;
+        [SerializeField][Range(1, 10)] private float smoothing = 8f;
 
-        if (Vector2.Distance(transform.position, targetPos) > 0.1f)
-            MoveToTarget(targetPos);
-    }
+        private Vector3 offset = new Vector2(6, 0);
 
-    private void MoveToTarget(Vector3 targetPos)
-    {        
-        targetPos = Vector3.Lerp(transform.position, targetPos, smoothing / 10 * Time.deltaTime);
-        targetPos.z = -10;
+        private void Update()
+        {
+            var targetPos = player.position + offset;
 
-        transform.position = targetPos;
+            if (Vector2.Distance(transform.position, targetPos) > 0.1f)
+                MoveToTarget(targetPos);
+        }
+
+        private void MoveToTarget(Vector3 targetPos)
+        {
+            targetPos = Vector3.Lerp(transform.position, targetPos, smoothing / 10 * Time.deltaTime);
+            targetPos.z = -10;
+
+            transform.position = targetPos;
+        }
     }
 }
