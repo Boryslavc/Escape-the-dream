@@ -23,6 +23,11 @@ public class SceneLoader : ScriptableObject
             SceneManager.LoadScene(currSceneInd + 1);
     }
 
+    public void LoadScene(int buildIndex)
+    {
+        SceneManager.LoadScene(buildIndex);
+    }
+
     public void QuitGame()
     {
         Application.Quit();

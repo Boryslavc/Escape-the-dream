@@ -6,5 +6,6 @@ namespace Core
     public class MoveDirection : ScriptableObject
     {
         public Vector3 Direction;
+        public float Length;
     }
 }

@@ -5,18 +5,16 @@ namespace Core
 {
     public class VectorTrajectoryBuilder : ITrajectoryBuilder
     {
-        public List<Vector3> BuildTrajectory(MoveDirection[] directions, Vector3 startPosition)
+        public List<Vector3> BuildTrajectory(MoveDirection[] steps, Vector3 startPosition)
         {
-            int directionLengthToObjectSizeRatio = 2;
-
             List<Vector3> result = new List<Vector3>();
             result.Add(startPosition);
 
             Vector3 lastPos = startPosition;
 
-            foreach (var direction in directions)
+            foreach (var step in steps)
             {
-                var newPoint = ((direction.Direction * directionLengthToObjectSizeRatio)) + lastPos;
+                var newPoint = lastPos + (step.Direction.normalized * step.Length);
                 result.Add(newPoint);
 
                 lastPos = newPoint;

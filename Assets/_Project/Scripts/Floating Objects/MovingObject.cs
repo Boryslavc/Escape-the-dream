@@ -14,7 +14,6 @@ namespace Core
         [SerializeField] private float speed;
         [SerializeField] private BaseBuilderWrapper builder;
 
-        public bool DebugMode = false;
         public void SetSpeed(float value) => speed = value;
 
         int currentPoint = 0;
@@ -34,17 +33,6 @@ namespace Core
         {
             if(isMoving) 
                 MoveSelf();
-
-            if (DebugMode)
-                ShowPath();
-        }
-
-        private void ShowPath()
-        {
-            for(int i = 1; i < positionsToVisit.Count; i++)
-            {
-                Debug.DrawLine(positionsToVisit[i], positionsToVisit[i - 1], Color.yellow);
-            }
         }
 
         private void MoveSelf()

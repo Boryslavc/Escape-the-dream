@@ -15,6 +15,12 @@ namespace Core.Persistence
         private GameData gameData;
         private string defaultSaveName = "Save";
 
+
+        public int GetLevelsCompleted()
+        {
+            return gameData.LevelsFinished;
+        }
+
         private void Awake()
         {
             ResolveSingleton();
@@ -37,7 +43,8 @@ namespace Core.Persistence
                 NewGame();
         }
 
-        private void NewGame()
+        // Can externally create new save, but cannot externally modify it
+        public void NewGame()
         {
             gameData = new GameData() { Name = defaultSaveName, LevelsFinished = 0};
         }

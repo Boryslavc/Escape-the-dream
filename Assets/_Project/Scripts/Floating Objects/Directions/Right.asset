@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Right
   m_EditorClassIdentifier: 
   Direction: {x: 1, y: 0, z: 0}
+  Length: 1
